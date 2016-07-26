@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>The Official Link Crap Remover</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+    <style>
+      body {
+        text-align: center;
+        margin: 0;
+      }
+
+      .form-container {
+        margin-top: 30px;
+      }
+
+      .form-container input[type="text"] {
+        width: 50%;
+        height: 25px;
+        display: block;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        border-bottom: blueviolet 4px solid;
+        margin-bottom: 20px;
+      }
+
+      input[type="text"]:focus::-webkit-input-placeholder { 
+        color:transparent; 
+      }
+      input[type="text"]:focus::-moz-placeholder { 
+        color:transparent; 
+      } /* FF 19+ */
+      input[type="text"]:focus:-ms-input-placeholder { 
+        color:transparent;
+      } /* IE 10+ */
+
+      fieldset {
+        border: none;
+      }
+
+      label {
+        visibility: hidden;
+      }
+
+      .form-container input[type="submit"],
+      .form-container input[type="reset"] {
+        border: 2px solid aqua;
+        background: aliceblue;
+        text-transform: uppercase;
+      }
+
+    </style>
+  </head>
+  <body ng-app="linkApp">
+    <div class="form-container" ng-controller="linkController">
+      <h1>The Official Link Crap Remover</h1>
+      <form>
+        <fieldset>
+          <label for="linkform">Paste link here</label>
+          <input type="text" id="linkform" ng-model="link" placeholder="Paste link here">
+        </fieldset>
+        <input type="submit" ng-click="cleanLink()">
+        <input type="reset" ng-click="resetLink()">
+      </form>
+      <div class="cleaned-link" ng-if="link.length > 0">
+        <p id="cleaned-link">{{link}}</p>
+        <button data-clipboard-target="#cleaned-link" id="copy-link">Copy link</button>
+      </div>
+    </div>
+
+    <!-- Module -->
+    <script src="javascripts/app.js"></script>
+
+    <!-- Components -->
+    <script src="javascripts/form_component.js"></script>
+  </body>
+</html>
+
+<!-- 
+User puts link into box
+When submit is clicked
+The link is returned below, 
+WITHOUT any metadata crap 
+-->
