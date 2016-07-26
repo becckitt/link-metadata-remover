@@ -15,7 +15,7 @@
         margin-top: 30px;
       }
 
-      .form-container input[type="text"] {
+      .form-container input[type="url"] {
         width: 50%;
         height: 25px;
         display: block;
@@ -27,13 +27,13 @@
         margin-bottom: 20px;
       }
 
-      input[type="text"]:focus::-webkit-input-placeholder { 
+      input[type="url"]:focus::-webkit-input-placeholder { 
         color:transparent; 
       }
-      input[type="text"]:focus::-moz-placeholder { 
+      input[type="url"]:focus::-moz-placeholder { 
         color:transparent; 
       } /* FF 19+ */
-      input[type="text"]:focus:-ms-input-placeholder { 
+      input[type="url"]:focus:-ms-input-placeholder { 
         color:transparent;
       } /* IE 10+ */
 
@@ -46,7 +46,8 @@
       }
 
       .form-container input[type="submit"],
-      .form-container input[type="reset"] {
+      .form-container input[type="reset"],
+      button {
         border: 2px solid aqua;
         background: aliceblue;
         text-transform: uppercase;
@@ -60,7 +61,7 @@
       <form>
         <fieldset>
           <label for="linkform">Paste link here</label>
-          <input type="text" id="linkform" ng-model="link" placeholder="Paste link here">
+          <input type="url" id="linkform" ng-model="link" placeholder="Paste link here">
         </fieldset>
         <input type="submit" ng-click="cleanLink()">
         <input type="reset" ng-click="resetLink()">
