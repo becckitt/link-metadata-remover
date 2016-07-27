@@ -61,13 +61,14 @@
       <form>
         <fieldset>
           <label for="linkform">Paste link here</label>
-          <input type="url" id="linkform" ng-model="link" placeholder="Paste link here">
+          <input type="url" id="linkform" ng-model="link" placeholder="Paste link here" ng-minlength="10">
         </fieldset>
         <input type="submit" ng-click="cleanLink()">
         <input type="reset" ng-click="resetLink()">
       </form>
-      <div class="cleaned-link" ng-if="link.length > 0">
-        <p id="cleaned-link">{{link}}</p>
+      <div class="cleaned-link" ng-if="showCleanLink">
+        <h3>Clean link:</h3>
+        <p id="cleaned-link">{{cleanedLink}}</p>
         <button data-clipboard-target="#cleaned-link" id="copy-link">Copy link</button>
       </div>
     </div>
