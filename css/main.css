@@ -2,6 +2,7 @@ body {
   text-align: center;
   margin: 0;
   font-family: 'Nunito', monospace;
+  padding-top: 30px;
 }
 
 .form-container {
@@ -21,6 +22,7 @@ body {
   border-image-slice: 1;
   margin: 0 auto 20px auto;
   padding: 5px 0;
+  font-family: 'Nunito', sans-serif;
 }
 
 input[type="url"]:focus::-webkit-input-placeholder { 
@@ -80,4 +82,38 @@ p#cleaned-link {
   padding: 7px 35px;
   background: aliceblue;
   margin: 0 auto 20px auto;
+}
+
+blockquote {
+  width: 280px;
+  position: absolute;
+}
+
+blockquote.left {
+  transform: rotate(-25deg);
+  top: 90px;
+}
+
+span.quote-underline {
+  background-image: linear-gradient(270deg, orange, fuchsia);
+  background-size: 100%;
+  background-position: 0px 17px;
+  background-repeat: no-repeat;
+  animation: gradientChange 2s infinite ease-in-out;
+}
+
+blockquote.right {
+  transform: rotate(25deg);
+  top: 105px;
+  right: 0;
+  width: 250px;
+}
+
+@keyframes gradientChange {
+  50% {
+    background-image: linear-gradient(90deg, orange, fuchsia);
+  }
+  100% {
+    background-image: linear-gradient(-90deg, orange, fuchsia);
+  }
 }

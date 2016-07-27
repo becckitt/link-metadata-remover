@@ -10,16 +10,18 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body ng-app="linkApp">
+    <blockquote class="left"><span class="quote-underline">Never accidentally support someone's tracking for a PR campaign again!</span></blockquote>
     <div class="form-container" ng-controller="linkController">
       <h1>The Official Link Crap Remover</h1>
       <form>
         <fieldset>
-          <label for="linkform">Paste link here</label>
           <input type="url" id="linkform" ng-model="link" placeholder="Paste link here" ng-minlength="10">
         </fieldset>
         <input type="submit" ng-click="cleanLink()">
         <input type="reset" ng-click="resetLink()">
       </form>
+      <blockquote class="right"><span class="quote-underline">Get rid of that deadweight on your links!</span></blockquote>
+
       <div class="cleaned-link" ng-if="showCleanLink">
         <h3>Clean link:</h3>
         <p id="cleaned-link">{{cleanedLink}}</p>
